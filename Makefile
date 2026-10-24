@@ -13,5 +13,5 @@ update:
 	sh ${SCRIPT}
 
 build:
-	podman build -t ${TAG} .
+	podman build --platform linux/amd64 -t ${TAG} .
 	podman push ${TAG}
