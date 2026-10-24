@@ -5,7 +5,7 @@ OUT := $(BIN)/ecr
 SCRIPT := $(PROJECT)update.sh
 
 CONTAINER := scratch:latest
-TAG := grahamlee/scratch:latest
+TAG := docker.io/grahamlee/scratch:latest
 
 default: update
 
@@ -13,5 +13,5 @@ update:
 	sh ${SCRIPT}
 
 build:
-	docker build -t ${TAG} .
-	docker push ${TAG}
+	podman build -t ${TAG} .
+	podman push ${TAG}
